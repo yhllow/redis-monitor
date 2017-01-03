@@ -27,7 +27,7 @@ class BaseController(tornado.web.RequestHandler):
                 connected_slaves = (int)(info["connected_slaves"])
                 slaves = ""
                 for i in range(0, connected_slaves):
-                    slaves += info["slave" + (str)(i)]
+                    slaves += str(info["slave" + (str)(i)])
             else:
                 master_host = info["master_host"]
                 master_port = (str)(info["master_port"])
