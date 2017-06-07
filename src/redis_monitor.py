@@ -193,7 +193,7 @@ class InfoThread(threading.Thread):
             connected_slaves = (int)(redis_info["connected_slaves"])
             slaves = ""
             for i in range(0, connected_slaves):
-                slaves += redis_info["slave" + (str)(i)]
+                slaves += str(redis_info["slave" + (str)(i)])
                 
             role_status = {"role":role, "slaves":slaves}
         else:
