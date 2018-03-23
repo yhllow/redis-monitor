@@ -39,6 +39,7 @@ class redis_live(daemonized):
         server_settings = {'debug': options.debug}
         application = tornado.web.Application(handlers, **server_settings)
         application.listen(options.port)
+        print("start at:0.0.0.0:%d http://127.0.0.1:8888/index.html" %(options.port))
         tornado.ioloop.IOLoop.instance().start()
 
 if __name__ == "__main__":

@@ -1,5 +1,4 @@
 from api.util import settings
-import sqliteprovider
 import redisprovider
 
 
@@ -18,5 +17,3 @@ class RedisLiveDataProvider(object):
         # FIXME: Should use a global variable for "redis" here.
         if data_store_type == "redis":
             return redisprovider.RedisStatsProvider()
-        else:
-            return sqliteprovider.RedisStatsProvider()
