@@ -1,22 +1,21 @@
 redis-monitor
 ---------
 
-base [RedisLive](https://github.com/nkrode/RedisLive)
+Base [RedisLive](https://github.com/nkrode/RedisLive)
 
-features:
+## Features:
 *  cluster: support thousands of redis instances
 *  light: redis info base
 *  metrics: memory, comands, Key HitRate, keyspace, master-slave change, expire keys
 *  notification API: crash, master-slave stats changed notify
 
-### configuration
+## Configuration
 vim src/redis_live.conf
 
 config：
 
-- RedisStatsServer: stats save in redis, config RedisStatsServer for stats storage backend
-
-- others: other setttigs you can config on dashboard settings tab
+- RedisStatsServer: stats storage backend(redis)
+- others: config on dashboard settings tab
 
 samples:
 ```
@@ -31,10 +30,10 @@ samples:
 
 ```
 
-### install deps
-	pip install -r requirements.txt
+## Install Deps
+    pip install -r requirements.txt
 
-### run
+## Run
     # 1. start redis instance for stat stroage
     redis-server --port 6379
 
@@ -48,11 +47,7 @@ samples:
 
     # 4. dashboard: http://127.0.0.1:8888/index.html
 
-### install centos services
-    cd install/centos
-    ./redis-monitor.sh
-
-### overview
+## overview
 ![Redis Live](https://raw.github.com/LittlePeng/redis-monitor/master/design/redis-live.png)
 ![Redis Live](https://raw.github.com/LittlePeng/redis-monitor/master/design/overview.png)
 
