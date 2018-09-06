@@ -40,7 +40,8 @@ class BaseController(tornado.web.RequestHandler):
             info['master_slaves']=slaves
                     
                 
-        except redis.exceptions.ConnectionError:
+        #except redis.exceptions.ConnectionError:
+        except redis.exceptions.RedisError:
             info = {
                 "role"              :"down",
                 "uptime_in_seconds" :0,
